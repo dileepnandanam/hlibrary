@@ -1,11 +1,18 @@
 class Admin::BooksController < ApplicationController
+  include CableReady::Broadcaster
+
   def index
     @books = Book.available.all
   end
 
   def new
     @book = Book.new
-    render 'new'
+    cable_ready["book"].insert_adjacent_html(
+      selector: '.new-book-form-container',
+      position: 'afterbegin',
+      html: render_to_string('new')
+    )
+    cable_ready.broadcast
   end
 
   def create

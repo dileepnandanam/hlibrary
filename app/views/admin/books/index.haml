@@ -1,3 +1,4 @@
-= link_to 'Add book', new_admin_book_path
+= link_to 'Add book', '#', data: {reflex: 'click->Admin::BooksReflex#new'}
+.new-book-form-container
 - @books.each do |book|
   = render partial: 'book', locals: {book: book} 
