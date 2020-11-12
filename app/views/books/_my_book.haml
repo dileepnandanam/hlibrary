@@ -1,0 +1,6 @@
+.book
+  .text-center
+    = book.name
+  .links
+    - if current_user
+      = link_to 'return', return_book_path(book), method: :put

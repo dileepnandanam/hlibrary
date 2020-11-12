@@ -1,0 +1,6 @@
+.book
+  .text-center
+    = book.name
+  .links
+    = link_to 'borrow', borrow_book_path(book), method: :put
+    

@@ -1,0 +1,3 @@
+= link_to 'Add book', new_admin_book_path
+- @books.each do |book|
+  = render partial: 'book', locals: {book: book} 
