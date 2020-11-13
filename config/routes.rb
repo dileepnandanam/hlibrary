@@ -11,4 +11,8 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :books
   end
+
+  resource :switch do
+    get :switch, on: :member
+  end
 end

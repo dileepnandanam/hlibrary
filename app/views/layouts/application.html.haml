@@ -6,13 +6,20 @@
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
-  %body
-    - if current_user.present?
-      - if current_user.admin?
-        = link_to 'Manage books', admin_books_path
-      = link_to 'borrow books', books_path
+  %body.text-xl
+    - if current_user.blank?
+      = render partial: 'layouts/nav'
+    - elsif current_user.admin?
+      = render partial: 'layouts/admin_nav'
     - else
-      = link_to 'Sign in', new_user_session_path
-      = link_to 'Sign up', new_user_registration_path
-    = yield
+      = render partial: 'layouts/user_nav'
+    .page.bg-blue.p-8
+      = yield
+
+    - if true
+      .acc-switcher
+        - User.all.each do |u|
+          = link_to u.name, switch_switch_path(id: u), class: "nav-item block user-switch pull-left #{(current_user== u ? 'black' : '')}"
+        .clearfix
