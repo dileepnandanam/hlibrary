@@ -57,8 +57,6 @@ gem 'pry'
 gem 'pg', '~> 0.20'
 gem "haml-rails"
 gem 'devise'
-gem "nested_form"
-gem 'simple_form'
 
 gem "stimulus_reflex", "~> 3.3"
 gem "cable_ready", "~> 4.3"
