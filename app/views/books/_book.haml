@@ -1,6 +1,5 @@
-.book
-  .text-center
-    = book.name
-  .links
-    = link_to 'borrow', '#', data: {reflex: 'click->BooksReflex#borrow', id: book.id}
-    
+.text-center.text-4xl
+  = book.name
+.links
+  = link_to 'borrow', '#', data: {reflex: 'click->BooksReflex#borrow', id: book.id}
+  

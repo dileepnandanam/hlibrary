@@ -1,3 +1,5 @@
-- books.each do |book|
-  .book
-    = render partial: 'books/book', locals: {book: book}
+.grid.grid-cols-1.sm:grid-cols-2.md:grid-cols-3.lg:grid-cols-4.xl:grid-cols-6.gap-4
+  - books.each do |book|
+    .book.front-book.p-2.border.border-gray-600.shadow-lg
+      = render partial: 'books/book', locals: {book: book}
+  .clearfix

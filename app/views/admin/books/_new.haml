@@ -4,7 +4,11 @@
       = em
 = form_for([:admin, book], data: {reflex: 'submit->Admin::Books#create'}) do |f|
   = f.label 'Name of Book'
+  .clearfix
   = f.text_field :name
+  .clearfix
   = f.label 'Serial Number'
+  .clearfix
   = f.text_field :serial_number
+  .clearfix
   = f.submit 'Create Book'

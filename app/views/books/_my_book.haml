@@ -1,5 +1,4 @@
-.book
-  .text-center
-    = my_book.name
-  .links
-    = link_to 'return', '#', data: {reflex: 'click->BooksReflex#return', id: my_book.id}
+.text-center.text-4xl
+  = my_book.name
+.links
+  = link_to 'return', '#', data: {reflex: 'click->BooksReflex#return', id: my_book.id}

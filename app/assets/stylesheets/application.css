@@ -13,3 +13,19 @@
  *= require_tree .
  *= require_self
  */
+.front-book {
+  padding-top: 100% !important;
+  position: relative;
+}
+.front-book .text-center {
+  position: absolute;
+  top: 35%;
+  width: 100%;
+}
+.home {
+  padding-top: 30%;
+  padding-bottom: 30%;
+}
+.home .title {
+  width: 100%;
+}

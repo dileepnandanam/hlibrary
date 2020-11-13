@@ -1,6 +1,8 @@
 - if my_books.count == 0
   %h3
     No Books Borrowed
-- my_books.each do |my_book|
-  .my-book
-    = render partial: 'books/my_book', locals: {my_book: my_book}
+.grid.grid-cols-1.sm:grid-cols-2.md:grid-cols-3.lg:grid-cols-4.xl:grid-cols-6.gap-4
+  - my_books.each do |my_book|
+    .my-book.front-book.p-2.border.border-gray-600.shadow-lg
+      = render partial: 'books/my_book', locals: {my_book: my_book}
+.clearfix

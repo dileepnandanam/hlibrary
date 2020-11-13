@@ -1,10 +1,15 @@
-%h2
-  Books on Librarry
-.search
+%h2.text-center.text-3xl
+  All Books
+.mb-2
+.search.p-2
   = text_field_tag :query, nil, placeholder: 'search', data: {reflex: 'keyup->BooksReflex#search'}
+.mb-2
 .books
-  = render partial: 'books/books', locals: {books: @books} 
-%h2
-  Books I Borrowed
+  = render partial: 'books/books', locals: {books: @books}
+.mb-5
+
+%h2.text-center.text-3xl
+  Borrowed Books
+.mb-2
 .my-books
   = render partial: 'books/my_books', locals: {my_books: current_user.books}
