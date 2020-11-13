@@ -8,4 +8,11 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    - if current_user.present?
+      - if current_user.admin?
+        = link_to 'Manage books', admin_books_path
+      = link_to 'borrow books', books_path
+    - else
+      = link_to 'Sign in', new_user_session_path
+      = link_to 'Sign up', new_user_registration_path
     = yield

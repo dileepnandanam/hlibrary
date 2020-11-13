@@ -1,0 +1,6 @@
+- if my_books.count == 0
+  %h3
+    No Books Borrowed
+- my_books.each do |my_book|
+  .my-book
+    = render partial: 'books/my_book', locals: {my_book: my_book}

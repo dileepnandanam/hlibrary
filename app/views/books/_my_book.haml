@@ -1,6 +1,5 @@
 .book
   .text-center
-    = book.name
+    = my_book.name
   .links
-    - if current_user
-      = link_to 'return', return_book_path(book), method: :put
+    = link_to 'return', '#', data: {reflex: 'click->BooksReflex#return', id: my_book.id}

@@ -1,9 +1,8 @@
 %h2
   Books on Librarry
-- @books.each do |book|
-  = render partial: 'book', locals: {book: book} 
+.books
+  = render partial: 'books/books', locals: {books: @books} 
 %h2
   Books I Borrowed
-- if current_user.present?
-  - current_user.books.each do |book|
-    = render partial: 'my_book', locals: {book: book} 
+.my-books
+  = render partial: 'books/my_books', locals: {my_books: current_user.books}

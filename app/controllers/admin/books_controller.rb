@@ -2,7 +2,7 @@ class Admin::BooksController < ApplicationController
   include CableReady::Broadcaster
 
   def index
-    @books = Book.available.all
+    @books = Book.all
   end
 
   def create
