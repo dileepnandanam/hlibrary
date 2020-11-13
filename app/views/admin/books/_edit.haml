@@ -1,0 +1,8 @@
+- if book.errors.any?
+  - book.errors.full_messages.each do |em|
+    .error-message
+      = em
+= form_for([:admin, book], data: {reflex: 'submit->Admin::Books#update', id: book.id}) do |f|
+  = f.text_field :name
+  = f.text_field :serial_number
+  = f.submit 'Update Book'

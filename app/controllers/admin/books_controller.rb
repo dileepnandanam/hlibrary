@@ -5,16 +5,6 @@ class Admin::BooksController < ApplicationController
     @books = Book.available.all
   end
 
-  def new
-    @book = Book.new
-    cable_ready["book"].insert_adjacent_html(
-      selector: '.new-book-form-container',
-      position: 'afterbegin',
-      html: render_to_string('new')
-    )
-    cable_ready.broadcast
-  end
-
   def create
     @book = Book.create book_params
     if @book.valid?

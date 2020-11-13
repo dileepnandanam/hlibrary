@@ -1,7 +1,6 @@
-.book
-  .text-center
-    = book.name
-  .links
-    = link_to 'edit', '#', data: {reflex: 'click->Admin::BooksReflex#edit'}
-    = link_to 'delete', '#', data: {reflex: 'click->Admin::BooksReflex#destroy'}
-  .edit-book-form-container{id: "edit-#{book.id}"}
+.text-center
+  = book.name
+.links
+  = link_to 'edit', '#', data: {reflex: 'click->Admin::BooksReflex#edit', id: book.id}
+  = link_to 'delete', '#', data: {reflex: 'click->Admin::BooksReflex#destroy', id: book.id}
+.edit-book-form-container{id: "edit-book-#{book.id}"}

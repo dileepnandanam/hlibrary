@@ -4,4 +4,8 @@ class Book < ApplicationRecord
   belongs_to :user, optional: true
 
   scope :available, -> () {where(user_id: nil)}
+
+  validates :serial_number, uniqueness: true
+
+  default_scope -> {order('id DESC')}
 end

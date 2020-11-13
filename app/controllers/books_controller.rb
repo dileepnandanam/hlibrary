@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.available.all
+    @books = Book.all
   end
 
   def borrow
