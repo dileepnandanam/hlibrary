@@ -2,6 +2,6 @@
   .text-center
     = book.name
   .links
-    = link_to 'edit', '#', data: {reflex: 'click->Admin::PostsReflex#edit'}
-    = link_to 'delete', '#', data: {reflex: 'click->Admin::PostsReflex#destroy'}
+    = link_to 'edit', '#', data: {reflex: 'click->Admin::BooksReflex#edit'}
+    = link_to 'delete', '#', data: {reflex: 'click->Admin::BooksReflex#destroy'}
   .edit-book-form-container{id: "edit-#{book.id}"}
