@@ -41,6 +41,6 @@ class Admin::BooksReflex < ApplicationReflex
 
   protected
   def book_params
-    params.require(:book).permit(:name, :serial_number)
+    params.require(:book).permit(:name, :serial_number, :author)
   end
 end
