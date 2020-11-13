@@ -2,7 +2,7 @@
   All Books
 .mb-2
 .search.p-2
-  = text_field_tag :query, nil, placeholder: 'search', data: {reflex: 'keyup->BooksReflex#search'}
+  = text_field_tag :query, nil, placeholder: 'search', data: {reflex: 'keyup->BooksReflex#search'}, class: 'shadow appearance-none border rounded max-w-sm py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2'
 .mb-2
 .books
   = render partial: 'books/books', locals: {books: @books}

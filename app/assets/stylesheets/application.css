@@ -20,7 +20,7 @@
 .front-book .text-center {
   position: absolute;
   top: 35%;
-  width: 100%;
+  width: 90%;
 }
 .home {
   padding-top: 20%;
@@ -28,4 +28,7 @@
 }
 .home .title {
   width: 100%;
+}
+form {
+  background: aquamarine !important;
 }

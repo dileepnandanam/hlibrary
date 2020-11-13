@@ -8,6 +8,6 @@ class Book < ApplicationRecord
   default_scope -> {order('id DESC')}
 
   def self.search(query)
-    Book.where("name like '%#{query}%'")
+    Book.where("name like '%#{query}%' OR author like '%#{query}%'")
   end
 end
