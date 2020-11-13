@@ -4,25 +4,25 @@
   <%= render "devise/shared/error_messages", resource: resource %>
 
   <div class="field">
-    <%= f.label :email, class: 'block text-gray-700 text-l font-bold' %><br />
+    <%= f.label :email, class: 'block text-gray-700 text-l font-bold' %>
     <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2' %>
   </div>
 
   <div class="field">
-    <%= f.label :name, class: 'block text-gray-700 text-l font-bold' %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2' %>
+    <%= f.label :name, class: 'block text-gray-700 text-l font-bold' %>
+    <%= f.text_field :email, autofocus: true, autocomplete: "email", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2' %>
   </div>
 
   <div class="field">
     <%= f.label :password, class: 'block text-gray-700 text-l font-bold' %>
     <% if @minimum_password_length %>
     <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
+    <% end %>
     <%= f.password_field :password, autocomplete: "new-password", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2' %>
   </div>
 
   <div class="field">
-    <%= f.label :password_confirmation, class: 'block text-gray-700 text-l font-bold' %><br />
+    <%= f.label :password_confirmation, class: 'block text-gray-700 text-l font-bold' %>
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2' %>
   </div>
 
