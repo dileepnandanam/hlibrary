@@ -1,7 +1,7 @@
 %h2
   Books on Librarry
 .search
-  = text_field_tag :query, nil, placeholder: 'search', data: {reflex: 'change->BooksReflex#search'}
+  = text_field_tag :query, nil, placeholder: 'search', data: {reflex: 'keyup->BooksReflex#search'}
 .books
   = render partial: 'books/books', locals: {books: @books} 
 %h2
