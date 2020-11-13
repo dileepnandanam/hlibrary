@@ -8,6 +8,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
   end
 
+  def check_permission
+    unless current_user.present?
+      render 'layouts/noaccess' and return
+    end
+  end
+
   private
 
   def set_action_cable_identifier
