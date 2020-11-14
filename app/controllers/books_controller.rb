@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
   before_action :check_permission
   def index
-    @books = Book.all
+    @books = Book.left_for(current_user)
   end
 
   def show

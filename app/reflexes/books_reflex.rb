@@ -8,12 +8,14 @@ class BooksReflex < ApplicationReflex
     book = Book.find_by_id element.dataset['id']
     current_user.borrow(book)
     morph '.my-books', render(partial: 'books/my_books', locals: {my_books: current_user.books})
+    morph '.books', render(partial: 'books/books', locals: {books: Book.left_for(current_user)})
   end
 
   def return
     book = Book.find_by_id element.dataset['id']
     current_user.return(book)
     morph '.my-books', render(partial: 'books/my_books', locals: {my_books: current_user.books})
+    morph '.books', render(partial: 'books/books', locals: {books: Book.left_for(current_user)})
   end
 
   def search
