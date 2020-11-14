@@ -6,5 +6,8 @@ class BooksController < ApplicationController
 
   def show
     @book = current_user.books.find_by_id params[:id]
+    if @book.blank?
+      render 'layouts/noaccess' and return
+    end
   end
 end
