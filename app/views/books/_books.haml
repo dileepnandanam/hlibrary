@@ -1,3 +1,6 @@
+- if books.count == 0
+  %h3
+    No Books Found
 .grid.grid-cols-1.sm:grid-cols-2.md:grid-cols-3.lg:grid-cols-4.xl:grid-cols-4.gap-4
   - books.each do |book|
     .book.front-book.p-2.border.border-gray-600.shadow-lg

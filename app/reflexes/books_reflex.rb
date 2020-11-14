@@ -20,6 +20,6 @@ class BooksReflex < ApplicationReflex
 
   def search
     query = element.value
-    morph '.books', render(partial: 'books/books', locals: {books: Book.search(query)})
+    morph '.books', render(partial: 'books/books', locals: {books: Book.search(query, current_user)})
   end
 end
