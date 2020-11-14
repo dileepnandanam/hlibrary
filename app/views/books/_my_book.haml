@@ -1,5 +1,7 @@
 .text-center.text-2xl
   = my_book.name
+  .text-lg
+    = my_book.author
 .links
   = link_to 'return', '#', data: {reflex: 'click->BooksReflex#return', id: my_book.id}
   = link_to 'read', book_path(my_book), class: 'float-right'
