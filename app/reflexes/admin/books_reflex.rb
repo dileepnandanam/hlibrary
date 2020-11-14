@@ -1,7 +1,10 @@
 # frozen_string_literal: true
 
 class Admin::BooksReflex < ApplicationReflex
+  delegate :current_user, to: :connection
   delegate :render, to: ApplicationController
+
+  before_reflex :check_permission
 
   def new
     book = Book.new
@@ -39,8 +42,19 @@ class Admin::BooksReflex < ApplicationReflex
     end
   end
 
+  def index
+    books = Book.all
+    morph '.page', render(partial: 'admin/books/index', locals: {books: books})
+  end
+
   protected
   def book_params
     params.require(:book).permit(:name, :serial_number, :author)
+  end
+
+  def check_permission
+    unless current_user.admin?
+      morph '.page', '<h1>This part is not accessible</h>'
+    end
   end
 end

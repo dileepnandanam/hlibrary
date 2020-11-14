@@ -1,5 +1,1 @@
-= link_to 'Add book', '#', data: {reflex: 'click->Admin::BooksReflex#new'}, class: 'bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded'
-.new-book-form-container
-.books
-  = render partial: 'admin/books/books', locals: {books: @books}
-
+= render partial: 'admin/books/index', locals: {books: @books}

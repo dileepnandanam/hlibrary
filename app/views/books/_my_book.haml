@@ -4,4 +4,4 @@
     = my_book.author
 .links
   = link_to 'return', '#', data: {reflex: 'click->BooksReflex#return', id: my_book.id}
-  = link_to 'read', book_path(my_book), class: 'float-right'
+  = link_to 'read', '#', data: {reflex: 'click->BooksReflex#show', id: my_book.id}, class: 'float-right'

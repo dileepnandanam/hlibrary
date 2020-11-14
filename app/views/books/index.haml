@@ -1,15 +1,1 @@
-%h2.text-center.text-3xl
-  All Books
-.mb-2
-.search.p-2
-  = text_field_tag :query, nil, placeholder: 'search', data: {reflex: 'keyup->BooksReflex#search'}, class: 'shadow appearance-none border rounded max-w-sm py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline mb-2'
-.mb-2
-.books
-  = render partial: 'books/books', locals: {books: @books}
-.mb-5
-
-%h2.text-center.text-3xl
-  Borrowed Books
-.mb-2
-.my-books
-  = render partial: 'books/my_books', locals: {my_books: current_user.books}
+= render partial: 'books/index', locals: {books: @books, my_books: @my_books}
