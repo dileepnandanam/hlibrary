@@ -54,7 +54,7 @@ class Admin::BooksReflex < ApplicationReflex
 
   def check_permission
     unless current_user.admin?
-      morph '.page', '<h1>This part is not accessible</h>'
+      morph '.page', '<h1>This part is not accessible</h>' and return
     end
   end
 end

@@ -4,8 +4,6 @@ class BooksReflex < ApplicationReflex
   delegate :current_user, to: :connection
   delegate :render, to: ApplicationController
 
-  before_reflex :check_permission
-
   def borrow
     book = Book.find_by_id element.dataset['id']
     current_user.borrow(book)
@@ -37,10 +35,4 @@ class BooksReflex < ApplicationReflex
   end
 
   protected
-
-  def check_permission
-    unless current_user.present?
-      morph '.page', '<h1>This part is not accessible</h>'
-    end
-  end
 end
