@@ -9,7 +9,7 @@ class Book < ApplicationRecord
   default_scope -> {order('id DESC')}
 
   def self.search(query, user)
-    Book.left_for(user).where("books.name like '%#{query}%' OR books.author like '%#{query}%'")
+    Book.left_for(user).where("lower(books.name) like '%#{query.downcase}%' OR lower(books.author) like '%#{query.downcase}%'")
   end
 
   def self.left_for(user)
