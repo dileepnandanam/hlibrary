@@ -21,7 +21,7 @@
       = yield
 
     - if true
-      .acc-switcher
+      .acc-switcher.p-3
         - User.all.each do |u|
-          = link_to u.name, switch_switch_path(id: u), class: "nav-item block user-switch pull-left #{(current_user== u ? 'black' : '')}"
+          = link_to u.name, switch_switch_path(id: u), class: "float-left mr-2 inline p-1 #{(current_user== u ? 'bg-black text-blue-100' : '')}"
         .clearfix
