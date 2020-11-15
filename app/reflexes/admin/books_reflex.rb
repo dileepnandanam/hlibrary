@@ -47,6 +47,10 @@ class Admin::BooksReflex < ApplicationReflex
     morph '.page', render(partial: 'admin/books/index', locals: {books: books})
   end
 
+  def cancel_form
+    morph element.dataset['form_id'], ''
+  end
+
   protected
   def book_params
     params.require(:book).permit(:name, :serial_number, :author)
